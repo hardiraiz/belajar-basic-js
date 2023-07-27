@@ -1,0 +1,24 @@
+// sum 'n' first array value
+function sumFirst(arr, n) {
+  if (n <= 0) {
+    return 0;
+  } else {
+    return arr[n - 1] + sumFirst(arr, n - 1);
+  }
+}
+
+let sumA = sumFirst([2, 3, 4, 5], 3)
+console.log(sumA)
+
+
+// sum 'n' latest array value
+function sumLast(arr, n) {
+    if (n <= 0) {
+        return 0;
+    } else {
+        return arr[arr.length - n] + sumLast(arr, n - 1);
+    }
+}
+
+let sumB = sumLast([2, 3, 4, 5, 6], 3)
+console.log(sumB)

@@ -1,0 +1,35 @@
+// solution 1 -> my solution
+function rangeOfNumbers(startNum, endNum) {
+  return startNum > endNum ? [] : [startNum, ...rangeOfNumbers(startNum+1, endNum)];
+};
+
+let result = rangeOfNumbers(6,9);
+console.log(result);
+
+
+// solution 2
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum < startNum) {
+    return [];
+  } else {
+    const numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
+
+
+// solution 3
+function rangeOfNumbers(startNum, endNum) {
+  return endNum < startNum
+    ? []
+    : rangeOfNumbers(startNum, endNum - 1).concat(endNum);
+}
+
+
+// solution 4
+function rangeOfNumbers(startNum, endNum) {
+  return endNum < startNum
+    ? []
+    : [...rangeOfNumbers(startNum, endNum - 1), endNum];
+}

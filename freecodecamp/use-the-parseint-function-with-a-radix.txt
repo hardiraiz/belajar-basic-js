@@ -1,0 +1,12 @@
+// parseInt("11", 2) akan mengembalikan bilangan 3 karena "11" dalam sistem bilangan biner sama dengan 3 dalam sistem bilangan decimal.
+// parseInt("1F", 16) akan mengembalikan bilangan 31 karena "1F" dalam sistem bilangan hexadecimal sama dengan 31 dalam sistem bilangan decimal.
+// parseInt("1010", 2) akan mengembalikan bilangan 10 karena "1010" dalam sistem bilangan biner sama dengan 10 dalam sistem bilangan decimal.
+// Secara umum parseInt(string, radix) digunakan untuk mengkonversi string ke integer dengan sistem bilangan yang diinginkan.
+
+
+function convertToInteger(str) {
+  return parseInt(str, 2)
+}
+
+let a = convertToInteger("11");
+console.log(a)

@@ -1,0 +1,44 @@
+// solution 1 -> my solution
+function countdown(n){
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n - 1);
+    countArray.unshift(n);
+    return countArray;
+  }
+}
+
+let a = countdown(10);
+console.log(a)
+
+
+// solution 2
+// memanfaatkan splice untuk menambahkan nilai (memanipulasi array yang ada)
+// splice bisa digunakan lebih untuk add, remove, edit, dan remove + edit
+// parameter 1 untuk posisi, 
+// parameter 2 untuk yang jumlah elemen yang dihapus
+// parameter 3-n untuk nilai yang ditambahkan (bisa lebih dari 1 nilai secara bersamaan)
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.splice(0, 0, n);
+    return arr;
+  }
+}
+
+
+// solution 3
+// memanfaatkan array operation concat (membuat array baru) dengan value rekursif function
+function countdown(n){
+   return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+
+
+// solution 4
+// memanfaatkan spread operator + rekursif function
+function countdown(n){
+   return n < 1 ? [] : [n, ...countdown(n - 1)];
+}
